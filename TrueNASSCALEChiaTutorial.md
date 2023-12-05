@@ -35,7 +35,7 @@ Click on the widget to open the **Chia** app information screen.
 
 Click **Install** to open the **Install Chia** configuration screen.
 
-![InstallChiaScreen](/images/SCALE/Apps/InstallChiaScreen.png)
+![InstallChiaScreen](/static/img/truenas/InstallChiaScreen.png)
 
 Application configuration settings are grouped in several sections, each of which are explained in [Understanding SCALE Chia App Settings](#understanding-scale-chia-app-settings) below.
 To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
@@ -45,7 +45,7 @@ Accept the default value in **Version**.
 
 Select the timezone for your TrueNAS system location from the **Timezone** dropdown list.
 
-![InstallChiaConfigFullNodeService](/images/SCALE/Apps/InstallChiaConfigFullNodeService.png)
+![InstallChiaConfigFullNodeService](/static/img/truenas/InstallChiaConfigFullNodeService.png)
 
 Select the service from the **Chia Service Mode** dropdown list.
 The default option is **Full Node**, but you can select **Farmer** or **Harvester**.
@@ -62,7 +62,7 @@ Setting ports below 9000 automatically enables host networking.
 
 By default, SCALE can create the storage volumes (datasets) for the app by accepting the default ixVolume option.
 
-![InstallChiaStorageConfigixVolume](/images/SCALE/Apps/InstallChiaStorageConfigixVolume.png)
+![InstallChiaStorageConfigixVolume](/static/img/truenas/InstallChiaStorageConfigixVolume.png)
 
 To use existing datasets created for the Chia app, select **Host Path (Path that already exists on the system)**.
 Enter or browse to select the mount paths for the **config** dataset, then for the **plot** dataset. 
@@ -75,7 +75,7 @@ Click **Install**.
 The system opens the **Installed Applications** screen with the SCALE Chia app in the **Deploying** state.
 When the installation completes, it the status changes to **Running**.
 
-![ChiaAppInstalled](/images/SCALE/Apps/ChiaAppInstalled.png")
+![ChiaAppInstalled](/static/img/truenas/ChiaAppInstalled.png")
 
 The first time the SCALE Chia app launches, it automatically creates and sets a new private key for your Chia plotting and wallet, but you must preserve this key to persist across container restarts.
 
@@ -84,18 +84,18 @@ To make sure your plots and wallet private key persists across container or syst
 
 On the **Installed** apps screen, click on the **Chia** app row, scroll down to the **Workloads** widget, and locate the **Shell** and **Logs** icons.
 
-![ChiaAppWorkloadsWidget](/images/SCALE/Apps/ChiaAppWorkloadsWidget.png")
+![ChiaAppWorkloadsWidget](/static/img/truenass/ChiaAppWorkloadsWidget.png")
 
 Click on the shell <span class="iconify" data-icon="ci:window-terminal"></span> icon to open the **Choose pod** window.
 
-![ChiaChoosePodforShell](/images/SCALE/Apps/ChiaChoosePodforShell.png)
+![ChiaChoosePodforShell](/static/img/truenas/ChiaChoosePodforShell.png)
 
 Click **Choose** to open the **Pod shell** screen.
 
 To show Chia key file details and the 24 word recovery key, enter `/chia-blockchain/venv/bin/chia keys show --show-mnemonic-seed` at the **Shell** prompt.
 The command should return the keyfile and the 24-word recovery key.
 
-![ChiaShellShowMnemonicSeed](/images/SCALE/Apps/ChiaShellShowMnemonicSeed.png)
+![ChiaShellShowMnemonicSeed](/static/img/truenas/ChiaShellShowMnemonicSeed.png)
 
 If you loose the keyfile at any time, use this information to recover your account.
 To copy from the SCALE **Pod Shell**, highlight the part of the screen to copy, then press <kbd>Ctrl+Insert</kbd>.
@@ -118,7 +118,7 @@ Click on the Chia app row, then click **Edit** in the **Application Info** widge
 Click on **Chia Configuration** on the menu on the right of the screen or scroll down to this section.
 Click **Add** to the right of **Additional Environments** to add the **Name** and **Value** fields.
 
-![EditChiaConfigAddEnvironmentVariable](/images/SCALE/Apps/EditChiaConfigAddEnvironmentVariable.png)
+![EditChiaConfigAddEnvironmentVariable](/static/img/truenas/EditChiaConfigAddEnvironmentVariable.png)
 
 Enter **keys** in **Name** and **/plots/keyfile** in **Value**.
 
@@ -143,11 +143,11 @@ This example shows the Windows setup option.
 
 After downloading the setup file and opening the **Chia Setup** wizard, agree to the license to show the Chia setup options.
 
-![ChiaGUISetupInstallOptions](/images/SCALE/Apps/ChiaGUISetupInstallOptions.png)
+![ChiaGUISetupInstallOptions](/static/img/truenas/ChiaGUISetupInstallOptions.png)
 
 Click **Next**. Choose the installation location.
 
-![ChiaSetupGUIChooseLocation](/images/SCALE/Apps/ChiaSetupGUIChooseLocation.png)
+![ChiaSetupGUIChooseLocation](/static/img/truenas/ChiaSetupGUIChooseLocation.png)
 
 Click **Install** to begin the installation. 
 When complete, click **Next** to show the **Chia Setup Installation Complete** wizard window.
@@ -156,7 +156,7 @@ Select the **Add the Chia Command Line executable to PATH** advanced option if y
 
 After the setup completes, the Chia web portal opens in a new window where you configure your Chia wallet, farming modes, and other settings to customize Chia for your use case.
 
-![ChiaWebPortalGUI](/images/SCALE/Apps/ChiaWebPortalGUI.png)
+![ChiaWebPortalGUI](/static/img/truenas/ChiaWebPortalGUI.png)
 
 Use the [Chia Documentation](https://docs.chia.net/) guide you through completing the configuration of your Chia software and client.
 
@@ -186,12 +186,12 @@ Select the timezone for the location of the TrueNAS server from the dropdown lis
 The **Chia Service Node** has three options: **Full Node**, **Farmer**, and **Harvester**. 
 The default **Full Node** and **Farmer** options do not have extra settings.
 
-![InstallChiaConfigFullNodeService](/images/SCALE/Apps/InstallChiaConfigFullNodeService.png)
+![InstallChiaConfigFullNodeService](/static/img/truenas/InstallChiaConfigFullNodeService.png)
 
 Selecting **Harvester** shows the required **Farmer Address** and **Farmer Port** settings, and **CA** for the certificate authority for the farmer system.
 Refer to Chia documentation on each of these services and what to enter as the farmer address and CA.
 
-![InstallChiaConfigHarvesterService](/images/SCALE/Apps/InstallChiaConfigHarvesterService.png)
+![InstallChiaConfigHarvesterService](/static/img/truenas/InstallChiaConfigHarvesterService.png)
 
 After configuring the Chia software and client in the Chia GUI or CLI, you can edit these configuration settings. 
 If you want to create a second app deployment with the **Harvester** service node setting, repeat the instructions above, use a different name for the second deployment of the SCALE Chia app (for example, *chia-harvester*).
@@ -211,7 +211,7 @@ The SCALE Chai app listens on port **38444** and **38447**.
 To change the port numbers, enter an available number within the range 9000-65535. 
 Refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
 
-![InstallChiaNetworkConfig](/images/SCALE/Apps/InstallChiaNetworkConfig.png)
+![InstallChiaNetworkConfig](/static/img/truenas/InstallChiaNetworkConfig.png)
 
 ### Storage Configuration
 You can allow SCALE to create the datasets for Chia plots and configuration storage or you can create the datasets to use for the app storage volumes or to mount in the container.
@@ -225,11 +225,11 @@ If also mounting datasets in the container pod for the Chia app, add and name ad
 In the SCALE Chia app **Storage Configuration** section, select **Host Path (Path that already exists on the system)** as the **Type** for the **Data** storage volume.
 Enter or browse to and select the location of the existing dataset to populate the **Host Path** field. Repeat this for the **Plots** storage volume.
 
-![InstallChiaStorageConfigHostPaths](/images/SCALE/Apps/InstallChiaStorageConfigHostPaths.png)
+![InstallChiaStorageConfigHostPaths](/static/img/truenas/InstallChiaStorageConfigHostPaths.png)
 
 If adding storage volumes inside the container pod, click **Add** to the right of **Additional Volumes** for each dataset or ixVolume you want to mount inside the pod.
 
-![InstallChiaStorageConfigAdditionalVolsHostPath](/images/SCALE/Apps/InstallChiaStorageConfigAdditionalVolsHostPath.png)
+![InstallChiaStorageConfigAdditionalVolsHostPath](/static/img/truenas/InstallChiaStorageConfigAdditionalVolsHostPath.png)
 
 You can edit the SCALE Chia app after installing it to add additional storage volumes.
 
@@ -237,6 +237,6 @@ You can edit the SCALE Chia app after installing it to add additional storage vo
 The **Resources Configuration** section allows you to limit the amount of CPU and memory the SCALE Chia application can use.
 By default, the application is limited to use no more than **4** CPU cores and **8** Gibibytes available memory, but the application might use considerably less system resources.
 
-![InstallChiaResourcesConfig](/images/SCALE/Apps/InstallChiaResourcesConfig.png)
+![InstallChiaResourcesConfig](/static/img/truenas/InstallChiaResourcesConfig.png)
 
 Tune these limits as needed to prevent the application from over-consuming system resources and introducing performance issues.
